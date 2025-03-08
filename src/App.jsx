@@ -143,7 +143,6 @@ function App() {
 
   // 送出表單
   const onSubmit = handleSubmit((data) => {
-    console.log(data);
     const { message, ...user } = data;
 
     const userInfo = {
@@ -362,7 +361,7 @@ function App() {
                 }
               })}
               id="tel"
-              type="text"
+              type="tel"
               className={`form-control ${errors.tel && 'is-invalid'}`}
               placeholder="請輸入電話"
             />
