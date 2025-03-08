@@ -85,7 +85,6 @@ export default function CartPage(){
 
     // 送出表單
     const onSubmit = handleSubmit((data) => {
-        console.log(data);
         const { message, ...user } = data;
 
         const userInfo = {
@@ -239,7 +238,7 @@ export default function CartPage(){
                     }
                     })}
                     id="tel"
-                    type="text"
+                    type="tel"
                     className={`form-control ${errors.tel && 'is-invalid'}`}
                     placeholder="請輸入電話"
                 />
@@ -277,9 +276,12 @@ export default function CartPage(){
                 ></textarea>
                 </div>
                 <div className="text-end">
-                <button type="submit" className="btn btn-danger">
-                    送出訂單
-                </button>
+                    <button 
+                        type="submit" 
+                        className="btn btn-danger" 
+                        disabled={cart.carts?.length === 0}>
+                        送出訂單
+                    </button>
                 </div>
             </form>
             </div>
